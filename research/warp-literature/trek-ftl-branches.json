@@ -1,0 +1,334 @@
+{
+  "schema_version": 1,
+  "project": "QuantDeus Warp Lab",
+  "date": "2026-10-18",
+  "star_trek_inspiration_only": true,
+  "audit": {
+    "service": "Scholar Sidekick",
+    "checked_total": 8,
+    "matched": 8,
+    "misidentified": 0,
+    "retracted_detected": 0,
+    "note": "Bibliographic validity is NOT a scientific replication or experimental FTL demonstration."
+  },
+  "citations": [
+    {
+      "id": "alcubierre-1994",
+      "title": "The warp drive: hyper-fast travel within general relativity",
+      "identifier": "doi:10.1088/0264-9381/11/5/001",
+      "publication_status": "peer-reviewed",
+      "sidekick": "matched",
+      "retracted_detected": false
+    },
+    {
+      "id": "pfenning-ford-1997",
+      "title": "The unphysical nature of `warp drive'",
+      "identifier": "doi:10.1088/0264-9381/14/7/011",
+      "publication_status": "peer-reviewed",
+      "sidekick": "matched",
+      "retracted_detected": false
+    },
+    {
+      "id": "olum-1998",
+      "title": "Superluminal Travel Requires Negative Energies",
+      "identifier": "doi:10.1103/PhysRevLett.81.3567",
+      "publication_status": "peer-reviewed",
+      "sidekick": "matched",
+      "retracted_detected": false
+    },
+    {
+      "id": "bobrick-martire-2021",
+      "title": "Introducing physical warp drives",
+      "identifier": "doi:10.1088/1361-6382/abdf6e",
+      "publication_status": "peer-reviewed",
+      "sidekick": "matched",
+      "retracted_detected": false
+    },
+    {
+      "id": "santiago-schuster-visser-2022",
+      "title": "Generic warp drives violate the null energy condition",
+      "identifier": "doi:10.1103/PhysRevD.105.064038",
+      "publication_status": "peer-reviewed",
+      "sidekick": "matched",
+      "retracted_detected": false
+    },
+    {
+      "id": "fuchs-2024",
+      "title": "Constant velocity physical warp drive solution",
+      "identifier": "doi:10.1088/1361-6382/ad26aa",
+      "publication_status": "peer-reviewed",
+      "sidekick": "matched",
+      "retracted_detected": false
+    },
+    {
+      "id": "garattini-zatrimaylov-2024",
+      "title": "Black holes, warp drives, and energy conditions",
+      "identifier": "doi:10.1016/j.physletb.2024.138910",
+      "publication_status": "peer-reviewed",
+      "sidekick": "matched",
+      "retracted_detected": false
+    },
+    {
+      "id": "le-2026",
+      "title": "Observer-robust energy condition verification for warp drive spacetimes",
+      "identifier": "arxiv:2602.18023",
+      "publication_status": "preprint",
+      "sidekick": "matched",
+      "retracted_detected": false
+    }
+  ],
+  "gates": [
+    {
+      "id": "metric",
+      "question": "Определена ли метрика g_μν и её геометрические параметры?",
+      "requirement": "Полная метрика, область действия, параметры, источник",
+      "allowed": [
+        "PASS",
+        "FAIL",
+        "UNKNOWN"
+      ]
+    },
+    {
+      "id": "formal_ftl",
+      "question": "Есть ли сверхсветовое эффективное перемещение относительно удалённых наблюдателей, а не просто координатный эффект?",
+      "requirement": "Решение метрики, инвариантная/операционная формулировка времени доставки",
+      "allowed": [
+        "PASS",
+        "FAIL",
+        "UNKNOWN"
+      ]
+    },
+    {
+      "id": "energy_conditions",
+      "question": "Проверены ли все допустимые наблюдатели и необходимые энергетические условия?",
+      "requirement": "T_μν, NEC/WEC по всем направлениям, учёт измерений и источников",
+      "allowed": [
+        "PASS",
+        "FAIL",
+        "UNKNOWN"
+      ]
+    },
+    {
+      "id": "quantum_bounds",
+      "question": "Совместим ли источник со справедливыми квантовыми ограничениями?",
+      "requirement": "QEI, квантовая обратная реакция, масштаб поля",
+      "allowed": [
+        "PASS",
+        "FAIL",
+        "UNKNOWN"
+      ]
+    },
+    {
+      "id": "horizon_causality",
+      "question": "Нет ли запретных горизонтов управления и противоречий причинности?",
+      "requirement": "Глобальные геодезические, причинные диаграммы, создание/управление",
+      "allowed": [
+        "PASS",
+        "FAIL",
+        "UNKNOWN"
+      ]
+    },
+    {
+      "id": "stability",
+      "question": "Устойчива ли метрика и не разрушает ли корабль приливными эффектами?",
+      "requirement": "Линейная/нелинейная устойчивость, кривизна, приливные силы",
+      "allowed": [
+        "PASS",
+        "FAIL",
+        "UNKNOWN"
+      ]
+    },
+    {
+      "id": "engineerability",
+      "question": "Можно ли физически создать и управлять требуемым стресс-энергетическим источником?",
+      "requirement": "Спецификация материальных источников, энерго-бюджет, контролируемое управление",
+      "allowed": [
+        "PASS",
+        "FAIL",
+        "UNKNOWN"
+      ]
+    },
+    {
+      "id": "experiment",
+      "question": "Есть ли независимая воспроизводимая демонстрация физического FTL?",
+      "requirement": "Открытые экспериментальные данные, методика, воспроизводимость",
+      "allowed": [
+        "PASS",
+        "FAIL",
+        "UNKNOWN"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "star-trek-warp",
+      "name": "Star Trek: подпространственные катушки и варп-пузырь",
+      "type": "fictional-specification",
+      "source": [
+        "https://www.startrek.com/news/the-science-behind-discoverys-burn"
+      ],
+      "gates": {
+        "metric": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "note": "Подпространство и катушки — сюжетная техническая концепция без установленной физической метрики."
+        },
+        "formal_ftl": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "note": "В сюжете FTL присутствует, но это не научное доказательство."
+        },
+        "energy_conditions": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "note": ""
+        },
+        "quantum_bounds": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "note": ""
+        },
+        "horizon_causality": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "note": ""
+        },
+        "stability": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "note": ""
+        },
+        "engineerability": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "note": ""
+        },
+        "experiment": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "alcubierre-1994",
+      "name": "Исходная метрика Алькубьерре",
+      "type": "formal-superluminal-metric",
+      "source": [
+        "alcubierre-1994",
+        "pfenning-ford-1997",
+        "olum-1998",
+        "santiago-schuster-visser-2022"
+      ],
+      "gates": {
+        "metric": {
+          "status": "PASS",
+          "evidence": [
+            "alcubierre-1994"
+          ],
+          "note": "Определена математическая метрика пузыря."
+        },
+        "formal_ftl": {
+          "status": "PASS",
+          "evidence": [
+            "alcubierre-1994"
+          ],
+          "note": "Эффективное FTL в математической метрике при формальном выборе скорости, не в эксперименте."
+        },
+        "energy_conditions": {
+          "status": "FAIL",
+          "evidence": [
+            "alcubierre-1994",
+            "santiago-schuster-visser-2022"
+          ],
+          "note": "Отрицательная плотность энергии у эйлеровых наблюдателей исходной метрики; WEC нарушено."
+        },
+        "quantum_bounds": {
+          "status": "FAIL",
+          "evidence": [
+            "pfenning-ford-1997"
+          ],
+          "note": "Для исходной модели возникают сильные ограничения квантовых неравенств."
+        },
+        "horizon_causality": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "note": "Нужен специализированный анализ рассматриваемой траектории и динамики создания."
+        },
+        "stability": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "note": ""
+        },
+        "engineerability": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "note": ""
+        },
+        "experiment": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": "fuchs-2024",
+      "name": "Fuchs et al.: досветовая варп-геометрия",
+      "type": "subluminal-theory",
+      "source": [
+        "fuchs-2024",
+        "bobrick-martire-2021",
+        "santiago-schuster-visser-2022"
+      ],
+      "gates": {
+        "metric": {
+          "status": "PASS",
+          "evidence": [
+            "fuchs-2024"
+          ],
+          "note": "Опубликована численная метрика."
+        },
+        "formal_ftl": {
+          "status": "FAIL",
+          "evidence": [
+            "fuchs-2024"
+          ],
+          "note": "Авторы прямо указывают досветовую постоянную скорость; не является FTL."
+        },
+        "energy_conditions": {
+          "status": "PASS",
+          "evidence": [
+            "fuchs-2024"
+          ],
+          "note": "Для построенной ДОСВЕТОВОЙ модели авторы демонстрируют выполнение энергетических условий, без обобщения на FTL."
+        },
+        "quantum_bounds": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "note": ""
+        },
+        "horizon_causality": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "note": ""
+        },
+        "stability": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "note": ""
+        },
+        "engineerability": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "note": ""
+        },
+        "experiment": {
+          "status": "UNKNOWN",
+          "evidence": [],
+          "note": ""
+        }
+      }
+    }
+  ]
+}
