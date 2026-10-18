@@ -1,0 +1,63 @@
+name: QuantDeus Warp Literature QA
+run-name: "🐒 Варп: Google Books + научные статьи + QA"
+
+on:
+  pull_request:
+    paths:
+      - 'research/warp-literature/**'
+      - '.github/workflows/warp-literature.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/warp-literature/**'
+      - '.github/workflows/warp-literature.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '13 6 * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: warp-literature
+  cancel-in-progress: false
+
+jobs:
+  qa:
+    name: "QA: проверка источников и научных ограничений"
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: "Проверка синтаксиса Python"
+        run: python -m py_compile research/warp-literature/scout.py
+      - name: "Проверка поисковика без платных API"
+        run: python -m unittest discover -s research/warp-literature/tests -p "test_*.py" -v
+
+  scout:
+    name: "Scout: библиографическая разведка, только чтение"
+    needs: qa
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: "Поиск книг и научных статей"
+        env:
+          GOOGLE_BOOKS_API_KEY: ${{ secrets.GOOGLE_BOOKS_API_KEY }}
+          SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
+        run: |
+          python research/warp-literature/scout.py --output /tmp/warp-literature
+      - name: "Сохранить отчёт для Analyst / Risk / Builder / QA"
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: warp-literature-research
+          path: /tmp/warp-literature/
+          if-no-files-found: warn
+          retention-days: 7
