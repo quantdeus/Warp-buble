@@ -34,3 +34,9 @@ python research/warp-literature/scout.py --output /tmp/warp-literature
 ```
 
 Источники: [Google Books API](https://developers.google.com/books/docs/v1/reference/volumes/list), [Google Scholar Help](https://scholar.google.com/intl/us/scholar/help.html), [Crossref API](https://www.crossref.org/documentation/retrieve-metadata/rest-api/), [WarpFactory](https://github.com/NerdsWithAttitudes/WarpFactory).
+
+## Проверенные стартовые книги
+
+- [Бернард Шутц — *A First Course in General Relativity*, 3-е изд. (2022)](https://books.google.com/books?id=AHtrEAAAQBAJ), Google Books. Это вручную проверенная библиографическая ссылка, **не результат живого API-запроса**.
+
+**Если Google Books отвечает HTTP 429**, он остаётся в статусе недоступного источника; статические ссылки помогают начать чтение, но не подменяют онлайн-результаты. При необходимости владелец может добавить `GOOGLE_BOOKS_API_KEY` в [GitHub Actions Secrets](https://github.com/quantdeus/Warp-buble/settings/secrets/actions). Отдельно можно добавить `SERPAPI_API_KEY` для Google Академии. Не передавать ключи в issue/PR/чат.
