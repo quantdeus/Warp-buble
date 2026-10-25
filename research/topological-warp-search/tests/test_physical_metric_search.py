@@ -35,7 +35,7 @@ class PhysicsGates(unittest.TestCase):
             self.assertAlmostEqual(float(fp[0]),0.)
             self.assertAlmostEqual(float(fpp[0]),0.)
     def test_no_false_necessity(self):
-        m.evaluate("quintic_C2",6.,12.,.9)["WEC"]=="FAIL_EULERIAN_COUNTEREXAMPLE"
+        self.assertEqual(m.evaluate("quintic_C2",6.,12.,.9)["WEC"],"FAIL_EULERIAN_COUNTEREXAMPLE")
         self.assertTrue(m.evaluate("quintic_C2",6.,12.,1.01)["NEC"]=="UNTESTED")
 
 if __name__=="__main__":unittest.main()
